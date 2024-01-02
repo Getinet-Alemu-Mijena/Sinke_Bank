@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/sinke_bank_logo.png', // Replace with your actual image asset path
+                'assets/sinke_bank_logo.jpeg', // Replace with your actual image asset path
                 height: 100,
                 width: 100,
               ),
