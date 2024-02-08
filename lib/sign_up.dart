@@ -5,71 +5,130 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sinke Bank'),
-      ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/sinke_bank_logo.png', // Replace with your actual image asset path
-                height: 100,
-                width: 100,
-              ),
-              SizedBox(height: 20),
-              SignUpForm(),
-            ],
+        backgroundColor: Colors.green[900],
+        title: Text(
+          "Sinke Bank of Oromia.",
+          style: TextStyle(
+            color: Colors.orangeAccent,
+            fontSize: 20,
           ),
         ),
+        centerTitle: true,
       ),
-    );
-  }
-}
+      body:SingleChildScrollView(
 
-class SignUpForm extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(color: Colors.blue),
-      ),
-      child: Form(
+      child:
+      Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Full Name',
-                prefixIcon: Icon(Icons.person),
+            Container(
+              width: MediaQuery.of(context).size.width * 1.0,
+              height: MediaQuery.of(context).size.height * 0.2,
+              margin: EdgeInsets.fromLTRB(0, 5, 0, 0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  ),
+                ],
               ),
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Email',
-                prefixIcon: Icon(Icons.email),
+              child: Center(
+                child: Text(
+                  "Sign Up",
+                  style: TextStyle(
+                    color: Colors.purple,
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    fontStyle: FontStyle.italic,
+                    letterSpacing: 2.0,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        blurRadius: 2,
+                        offset: Offset(1, 1),
+                      ),
+                    ],
+                  ),
+                ),
               ),
-              keyboardType: TextInputType.emailAddress,
-            ),
-            SizedBox(height: 10),
-            TextFormField(
-              decoration: InputDecoration(
-                labelText: 'Password',
-                prefixIcon: Icon(Icons.lock),
-              ),
-              obscureText: true,
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Add sign-up logic here
-              },
-              child: Text('Sign Up'),
+            Container(
+              width: MediaQuery.of(context).size.width * 0.9,
+              padding: EdgeInsets.all(16.0),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 2,
+                    blurRadius: 10,
+                    offset: Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: Column(
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.person),
+                      labelText: 'Full Name',
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.email),
+                      labelText: 'Email',
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.phone),
+                      labelText: 'Phone Number',
+                    ),
+                  ),
+                  SizedBox(height: 20),
+
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      labelText: 'Password',
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  TextFormField(
+                    obscureText: true,
+                    decoration: InputDecoration(
+                      prefixIcon: Icon(Icons.lock),
+                      labelText: 'Confirm Password',
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      // Add your authentication logic here
+                      // For simplicity, let's just print a message for now
+                      print('Sign Up button pressed');
+                    },
+                    child: Text('Sign Up'),
+                  ),
+                  SizedBox(height: 10),
+                ],
+              ),
             ),
           ],
         ),
+      ),
       ),
     );
   }

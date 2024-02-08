@@ -4,7 +4,8 @@ import 'second_page.dart';
 import 'user_profile_page.dart';
 import 'sign_in.dart';
 import 'sign_up.dart';
-import 'scafold_wedgit.dart';
+// import 'scafold_wedgit.dart';
+import 'Admin.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,12 +20,12 @@ class MyApp extends StatelessWidget {
       title: 'Sinke Bank',
       initialRoute: '/', // The initial route is the home page
       routes: {
-        '/': (context) => LoginPage(), // Home page
-        '/second': (context) => const SecondPage(), // Second page
-        '/userprofile':(context)=>UserProfilePage(),
-        '/home':(context)=>HomePage(),
+        '/':(context)=>LoginPage(),
         '/signup':(context)=>SignUpPage(),
-        '/scaffolded':(context)=>MyStatefulWidget(),
+        '/home': (context) => HomePage(),
+        '/admin':(context)=>Admin(),
+        '/second': (context) => const SecondPage(),
+        '/userprofile':(context)=>UserProfilePage(),
       },
     );
   }

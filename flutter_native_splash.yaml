@@ -1,0 +1,6 @@
+flutter_native_splash:
+  image: assets/hSiinkee.webp.webp
+  color: "#42a5f5"
+  fill: true
+  android: true
+  ios: true
